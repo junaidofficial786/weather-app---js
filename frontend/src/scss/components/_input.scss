@@ -12,3 +12,30 @@
     @include typography($font-size-16, $regular-400, $accent-color);
   }
 }
+
+.form-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: $spacing-16;
+    border: 1px solid $accent-color;
+    border-radius: $border-radius;
+    background-color: $tertiary-color;
+    padding: $spacing-16;
+    transition: border-color 0.3s;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: border-color 0.3s;
+  flex-direction: column;
+  label {
+    width: 100%;
+    margin-bottom: $spacing-6;
+    display: block;
+    @include typography($font-size-16, $regular-400, $primary-color);
+  }
+}

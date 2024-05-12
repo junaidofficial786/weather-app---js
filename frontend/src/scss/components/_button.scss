@@ -58,8 +58,9 @@
     align-items: center;
     justify-content: center;
 
-    path {
-      fill: $secondary-color;
+    img {
+      width: 20px;
+      height: 20px;
     }
   }
 
@@ -106,4 +107,40 @@
   @include media-query("small") {
     width: 100%;
   }
+}
+
+
+.site-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-14 $spacing-16;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: unset;
+  outline: unset;
+
+  .site-button-text {
+    @include typography($font-size-16, $medium-500, $secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: none;
+    transform: scale(0.98);
+  }
+}
+
+.btn-block {
+    width: 100%;
+
 }

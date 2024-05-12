@@ -45,4 +45,11 @@
   @include media-query("small") {
     flex-wrap: wrap;
   }
+
+  &.alert--error {
+    background-color: $error-color;
+    .alert-message {
+      color: $error-text-color;
+    }
+  }
 }

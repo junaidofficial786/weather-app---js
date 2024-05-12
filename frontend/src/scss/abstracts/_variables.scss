@@ -7,7 +7,8 @@ $dark-primary: #ffffff;
 $dark-secondary: #0f172a;
 $dark-tertiary: #1e293b;
 $dark-accent: #94a3b8;
-
+$error-color: #ff4d4f;
+$error-text-color: #ffffff;
 @media (prefers-color-scheme: light) {
   :root {
     --primary: #{$light-primary};

@@ -1,0 +1,9 @@
+.link,a{
+    @include typography($font-size-16, $regular-400, $primary-color);
+    text-decoration: none;
+    color: $primary-color;
+    transition: color 0.3s;
+    &:hover {
+        color: $accent-color;
+    }
+}

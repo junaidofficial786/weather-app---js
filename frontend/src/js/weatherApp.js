@@ -3,12 +3,11 @@ import { startLoadingState, endLoadingState } from "./setLoadingState.js";
 import { handleError } from "./handleError.js";
 import { currentWeatherData } from "./currentWeatherData.js";
 import { weatherForecastData } from "./weatherForecastData.js";
-
+let logoutButton = document.getElementById('logout-button');
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 const searchBoxInput = document.querySelector(".search-box-input");
 const gpsButton = document.querySelector(".gps-button");
-const ctaButton = document.querySelector(".cta-button");
 const topButton = document.querySelector(".top-button");
 
 createHourlyCards();
@@ -57,6 +56,13 @@ const scrollToTop = () => {
   });
 };
 
+
+
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("refreshToken");
+  window.location.href = "/login.html";
+};
 searchBoxInput.addEventListener("keyup", async (event) => {
   if (event.keyCode === 13) {
     await fetchWeatherData(searchBoxInput.value);
@@ -65,10 +71,9 @@ searchBoxInput.addEventListener("keyup", async (event) => {
 
 gpsButton.addEventListener("click", getUserLocation);
 
-ctaButton.addEventListener("click", () => {
-  window.open("https://github.com/pekkiriscim/weather");
-});
 
 topButton.addEventListener("click", scrollToTop);
+
+logoutButton.addEventListener("click", handleLogout);
 
 getUserLocation();
